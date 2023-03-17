@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from "react";
+import {Route, Routes} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {DiscordLoginHandler} from "./api/discord";
+import UserModel from "./model/user.model";
+import HomeComponent from "./pages/home";
+
+const App = () => {
+    const [currentUser, setCurrentUser] = useState(new UserModel());
+
+    return (
+        <>
+            <Routes>
+                <Route path='/' element={<HomeComponent currentUser={currentUser} tokens={null} />} />
+                <Route path='/auth/success' element={<DiscordLoginHandler setCurrentUser={setCurrentUser} />} />
+                <Route path='/auth/forbidden' element={<></>} />
+            </Routes>
+        </>
+    );
 }
 
 export default App;

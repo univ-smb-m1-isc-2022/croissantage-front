@@ -1,0 +1,41 @@
+.info-navbar {
+    background-color: #353839;
+    width: calc(100vw - 10em);
+    height: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5em;
+    -webkit-box-shadow: 0 0 5px 2px #000000;
+    box-shadow: 0 0 5px 2px #000000;
+}
+
+section {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+}
+
+section div {
+    display: flex;
+    flex-direction: column;
+    color: #E2EFF3;
+    margin-right: 3em;
+}
+
+h3 {
+    margin: 0 0 0.15em;
+    font-weight: 600;
+}
+
+h4 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.signal-button {
+    height: fit-content;
+    background-color: #009E3B !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+}

@@ -1,0 +1,12 @@
+.server-navbar {
+    background-color: #2F3233;
+    width: 5em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-box-shadow: 0 0 5px 2px #000000;
+    box-shadow: 0 0 5px 2px #000000;
+    z-index: 99;
+}

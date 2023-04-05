@@ -3,16 +3,15 @@ import UserModel from '../../model/user.model';
 import ServerNavbar from "../../components/server-navbar/server-navbar.component";
 import React from "react";
 import InfoNavbar from "../../components/info-navbar/info-navbar.component";
-import {useLocation, useParams} from "react-router-dom";
+import {Outlet, useLocation, useParams} from "react-router-dom";
 import {getGuildsByUserId} from "../../api/backend.api";
 import GuildModel from "../../model/guild.model";
 
 type Props = {
     currentUser: UserModel,
-    children?: React.ReactNode[],
 };
 
-const HomePage = ({ currentUser, children }: Props) => {
+const HomePage = ({ currentUser }: Props) => {
     const location = useLocation();
     const main = location.pathname === '/';
 
@@ -41,7 +40,7 @@ const HomePage = ({ currentUser, children }: Props) => {
             <div className='body'>
                 <InfoNavbar name={getName()} info={info} />
                 <main>
-                    {children && children.map(child => child)}
+                    <Outlet />
                 </main>
             </div>
         </>

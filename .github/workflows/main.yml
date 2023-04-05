@@ -18,7 +18,7 @@ jobs:
 #          java-version: '17'
 
       - name: Maven Build
-        run: npm build
+        run: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

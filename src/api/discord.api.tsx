@@ -2,7 +2,8 @@ import React from "react";
 import {Navigate} from "react-router-dom";
 import UserModel from "../model/user.model";
 
-const LoginURL = `http://localhost:8081/auth`;
+// const LoginURL = `http://localhost:8081/auth`;
+const LoginURL = `http://localhost:8080/auth`;
 
 type Props = {
     setUser: (user: UserModel, expires: Date) => void,
